@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 :root {
     --color-yellow: #fbd400;
     --color-green: #b5e352;
@@ -112,6 +114,9 @@ header p {
     text-align: center;
     padding: 5px;
     line-height: 1.2;
+    font-family: 'Roboto Condensed', sans-serif;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .tile.active {
@@ -128,6 +133,15 @@ header p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5px;
+}
+
+.completed-group-category,
+.completed-group-items {
+    font-family: 'Roboto Condensed', sans-serif;
+    word-break: break-word;
+    hyphens: auto;
+    text-align: center;
 }
 
 .completed-group-category {
@@ -146,7 +160,6 @@ header p {
 .difficulty-2 { background-color: var(--color-green); }
 .difficulty-3 { background-color: var(--color-blue); }
 .difficulty-4 { background-color: var(--color-purple); }
-
 
 #mistakes-container {
     display: flex;
@@ -229,9 +242,11 @@ header p {
 .modal-close:hover {
     color: #333;
 }
+
 .modal-content h2 {
     margin-top: 0;
 }
+
 .modal-content .color-box {
     display: inline-block;
     width: 14px;
@@ -244,14 +259,12 @@ header p {
 .color-box.blue { background-color: var(--color-blue); }
 .color-box.purple { background-color: var(--color-purple); }
 
-
 #results-emojis {
     font-size: 2.5rem;
     line-height: 1;
     text-align: center;
     white-space: pre;
 }
-
 
 /* Utility Classes */
 .hidden {
@@ -276,7 +289,7 @@ header p {
     }
     30% {
         transform: scale(1.1);
-        background-color: #d4edda; /* light green highlight */
+        background-color: #d4edda;
     }
     60% {
         transform: scale(0.95);
@@ -292,3 +305,72 @@ header p {
     z-index: 1;
 }
 
+/* Responsive Design — KEEP 4x4 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    .puzzle-selector-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tile {
+        height: 50px;
+        font-size: 0.7rem;
+        padding: 3px;
+        line-height: 1.1;
+    }
+
+    .completed-group {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .completed-group-category {
+        font-size: 0.9rem;
+    }
+
+    .completed-group-items {
+        font-size: 0.75rem;
+    }
+
+    #mistakes-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #controls-container {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    #controls-container button {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .modal-content {
+        padding: 15px 20px;
+    }
+
+    .modal-close {
+        font-size: 1.5rem;
+        top: 8px;
+        right: 10px;
+    }
+
+    #results-emojis {
+        font-size: 2rem;
+    }
+}
