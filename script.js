@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM Elements ---
     const gridContainer = document.getElementById('grid-container');
     const completedContainer = document.getElementById('completed-groups-container');
     const shuffleButton = document.getElementById('shuffle-button');
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsModal = document.getElementById('results-modal');
     const closeButtons = document.querySelectorAll('.modal-close');
     
-    // --- Game State ---
     let state = {
         allPuzzles: [],
         currentPuzzle: null,
@@ -26,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mistakesRemaining: 4,
         guesses: [],
         isFinished: false,
+        showOneAway: false,
     };
 
-    // --- Core Game Logic ---
     function init() {
         fetch('games.json')
             .then(response => response.json())
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 populateSelector();
                 loadPuzzle(state.allPuzzles[0]);
                 setupEventListeners();
-                rulesModal.classList.remove('hidden'); // Show rules on first load
+                rulesModal.classList.remove('hidden');
             });
     }
 
@@ -60,18 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
         state.mistakesRemaining = 4;
         state.guesses = [];
         state.isFinished = false;
+        state.showOneAway = false;
         
         render();
         updateDifficultyStars();
     }
 
     function render() {
-        // Clear containers
         gridContainer.innerHTML = '';
         completedContainer.innerHTML = '';
         hideAlerts();
 
-        // Render completed groups
+        if (state.showOneAway) {
+            alertOneAway.classList.remove('hidden');
+        }
+
         state.completedGroups.sort((a, b) => a.difficulty - b.difficulty).forEach(group => {
             const groupDiv = document.createElement('div');
             groupDiv.className = `completed-group difficulty-${group.difficulty}`;
@@ -81,8 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             completedContainer.appendChild(groupDiv);
         });
-        
-        // Render grid items
+
         state.items.forEach(item => {
             const tile = document.createElement('button');
             tile.className = 'tile';
@@ -94,18 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
             gridContainer.appendChild(tile);
         });
 
-        // Update mistakes
         mistakeDots.forEach((dot, index) => {
             dot.classList.toggle('used', index >= state.mistakesRemaining);
         });
 
-        // Update buttons
         deselectButton.disabled = state.activeItems.length === 0 || state.isFinished;
         submitButton.disabled = state.activeItems.length !== 4 || state.isFinished;
         shuffleButton.disabled = state.isFinished;
+
+        state.showOneAway = false;
     }
 
-    // --- Event Handlers ---
     function setupEventListeners() {
         puzzleSelector.addEventListener('change', (e) => {
             loadPuzzle(state.allPuzzles[e.target.value]);
@@ -142,42 +141,54 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }
 
-    function handleSubmit() {
-        if (state.activeItems.length !== 4) return;
+   function handleSubmit() {
+    if (state.activeItems.length !== 4) return;
 
-        const guess = [...state.activeItems].sort();
-        
-        // Check for duplicate guess
-        if (isAlreadyGuessed(guess)) {
-            alertAlreadyGuessed.classList.remove('hidden');
-            return;
-        }
-        state.guesses.push(guess);
-        
-        // Find which group the guess belongs to
-        const matchedGroup = findMatchedGroup(state.activeItems);
-
-        if (matchedGroup) { // Correct guess
+    const guess = [...state.activeItems].sort();
+    
+    if (isAlreadyGuessed(guess)) {
+        alertAlreadyGuessed.classList.remove('hidden');
+        return;
+    }
+    state.guesses.push(guess);
+    
+    const matchedGroup = findMatchedGroup(state.activeItems);
+    if (matchedGroup) {
+        animateCorrectGuess(() => {
             state.completedGroups.push(matchedGroup);
             state.items = state.items.filter(item => !state.activeItems.includes(item));
             state.activeItems = [];
 
             if (state.completedGroups.length === 4) {
                 endGame();
+            } else {
+                render();
             }
-        } else { // Incorrect guess
-            state.mistakesRemaining--;
-            animateWrongGuess();
-            if (isOneAway()) {
-                alertOneAway.classList.remove('hidden');
-            }
-            if (state.mistakesRemaining === 0) {
-                endGame(true); // Lost
-            }
+        });
+    } else {
+        state.mistakesRemaining--;
+        animateWrongGuess();
+        state.showOneAway = isOneAway();
+        if (state.mistakesRemaining === 0) {
+            endGame(true);
         }
         render();
     }
-    
+}
+
+function animateCorrectGuess(callback) {
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach(tile => {
+        if (state.activeItems.includes(tile.textContent)) {
+            tile.classList.add('correct-animation');
+        }
+    });
+    setTimeout(() => {
+        callback();
+    }, 600);
+}
+
+
     function endGame(lost = false) {
         state.isFinished = true;
         if (lost) {
@@ -198,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
         titleEl.textContent = `Resultater - ${resultTitles[mistakesMade] || resultTitles[4]}`;
         subtitleEl.textContent = `Du løste "${state.currentPuzzle.puzzle_name}"`;
 
-        // Generate emoji grid
         let emojiText = '';
         const colorMap = {1: '🟨', 2: '🟩', 3: '🟦', 4: '🟪'};
         state.guesses.forEach(guess => {
@@ -213,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsModal.classList.remove('hidden');
     }
 
-    // --- Helper Functions ---
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -238,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return matches === 3;
         });
     }
-    
+
     function animateWrongGuess() {
         const tiles = document.querySelectorAll('.tile');
         tiles.forEach(tile => {
@@ -253,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alertOneAway.classList.add('hidden');
         alertAlreadyGuessed.classList.add('hidden');
     }
-    
+
     function updateDifficultyStars() {
         difficultyStarsContainer.innerHTML = '';
         const difficulty = state.currentPuzzle.puzzle_difficulty || 0;
@@ -268,6 +277,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Start the game ---
     init();
 });
