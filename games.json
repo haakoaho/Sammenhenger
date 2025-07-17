@@ -1,0 +1,54 @@
+[
+  {
+    "puzzle_name": "Oppgave #1",
+    "puzzle_difficulty": 2,
+    "groups": [
+      {
+        "category": "BESTIKK",
+        "items": ["GAFFEL", "KNIV", "SKJE", "TESKJE"],
+        "difficulty": 1
+      },
+      {
+        "category": "FRUKT",
+        "items": ["EPLE", "BANAN", "PÆRE", "APPELSIN"],
+        "difficulty": 2
+      },
+      {
+        "category": "KOKEREDSKAPER",
+        "items": ["SLEIV", "VISP", "STEKESPADE", "ØSE"],
+        "difficulty": 3
+      },
+      {
+        "category": "MERKER KJØKKENUTSTYR",
+        "items": ["FISKARS", "IITTALA", "LE CREUSET", "ROSENDAHL"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "puzzle_name": "Oppgave #2",
+    "puzzle_difficulty": 3,
+    "groups": [
+      {
+        "category": "NORSKE BYER",
+        "items": ["OSLO", "BERGEN", "TRONDHEIM", "STAVANGER"],
+        "difficulty": 1
+      },
+      {
+        "category": "PLANETER",
+        "items": ["MARS", "JUPITER", "VENUS", "SATURN"],
+        "difficulty": 2
+      },
+      {
+        "category": "TRETYPER",
+        "items": ["BJØRK", "FURUTRE", "EIK", "GRAN"],
+        "difficulty": 3
+      },
+      {
+        "category": "ORD SOM OGSÅ ER ETTERNAVN",
+        "items": ["BERG", "HAUGEN", "LUND", "LIEN"],
+        "difficulty": 4
+      }
+    ]
+  }
+]
