@@ -1,11 +1,11 @@
 [
   {
     "puzzle_name": "Oppgave 24.juli 2025",
-    "puzzle_difficulty": 4,
+    "puzzle_difficulty": 5,
     "groups": [
       {
         "category": "BRITISKE ØYER",
-        "items": ["STORBRITANIA", "IRLAND", "ORKNØYENE", "SHETLAND"],
+        "items": ["STORBRITANNIA", "IRLAND", "ORKNØYENE", "SHETLAND"],
         "difficulty": 1
       },
       {
@@ -27,7 +27,7 @@
   },
   {
     "puzzle_name": "Oppgave 17.juli 2025",
-    "puzzle_difficulty": 4,
+    "puzzle_difficulty": 3,
     "groups": [
       {
         "category": "Bestikk",
