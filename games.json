@@ -1,5 +1,31 @@
 [
   {
+    "puzzle_name": "Oppgave 24.juli 2025",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "BRITISKE ØYER",
+        "items": ["STORBRITANIA", "IRLAND", "ORKNØYENE", "SHETLAND"],
+        "difficulty": 1
+      },
+      {
+        "category": "TIDEVANN",
+        "items": ["FLO", "FJÆRE", "EBBE", "NIPP"],
+        "difficulty": 2
+      },
+      {
+        "category": "FRI FERDSEL",
+        "items": ["UTMARK", "PARK", "STRAND", "GANGVEI"],
+        "difficulty": 3
+      },
+      {
+        "category": "FYLKER MINUS FØRSTE BOKSTAV",
+        "items": ["SLO", "ESTLAND", "INNMARK", "OGALAND"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
     "puzzle_name": "Oppgave 17.juli 2025",
     "puzzle_difficulty": 4,
     "groups": [
