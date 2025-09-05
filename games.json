@@ -1,4 +1,30 @@
 [
+   {
+    "puzzle_name": "Oppgave 4.september 2025",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "BRIKKER I SJAKK",
+        "items": ["BONDE", "DRONNING", "LØPER", "TÅRN"],
+        "difficulty": 1
+      },
+      {
+        "category": "VELDIG BRA",
+        "items": ["KANON", "SUPERT", "STRÅLENDE", "PERFEKT"],
+        "difficulty": 2
+      },
+      {
+        "category": "TRANSPORTMIDLER UTEN MOTOR",
+        "items": ["KANO", "SKI", "HEST", "SYKKEL"],
+        "difficulty": 3
+      },
+      {
+        "category": "SNØ_",
+        "items": ["SCOOTER", "HVIT", "MANN", "KRABBE"],
+        "difficulty": 4
+      }
+    ]
+  },
   {
     "puzzle_name": "Oppgave 24.juli 2025",
     "puzzle_difficulty": 5,
