@@ -1,5 +1,31 @@
 [
-   {
+  {
+    "puzzle_name": "Oppgave 12.september 2025",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "AMBISJONER",
+        "items": ["ØNSKE", "DRØM", "HÅP", "MÅL"],
+        "difficulty": 1
+      },
+      {
+        "category": "LINKEDIN PROFIL",
+        "items": ["BY", "STILLING", "PRONOMEN", "UTDANNING"],
+        "difficulty": 2
+      },
+      {
+        "category": "KONGS_",
+        "items": ["BERG", "TANKE", "GÅRD", "VIK"],
+        "difficulty": 3
+      },
+      {
+        "category": "_SYKE",
+        "items": ["KRYSTALL", "SUKKER", "SPANSKE", "SUBSTANTIV"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
     "puzzle_name": "Oppgave 4.september 2025",
     "puzzle_difficulty": 4,
     "groups": [
