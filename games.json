@@ -1,5 +1,31 @@
 [
   {
+    "puzzle_name": "Oppgave 25.september 2025",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "17. MAI",
+        "items": ["TOG", "KORPS", "SUKKERSPINN", "FLAGG"],
+        "difficulty": 1
+      },
+      {
+        "category": "KARDEMOMME BY",
+        "items": ["TRIKK", "RØVERE", "PAPPAGØYE", "SOFIE"],
+        "difficulty": 2
+      },
+      {
+        "category": "KAPTEIN SABELTANN",
+        "items": ["HIV", "HOI", "PINKY", "BÅT"],
+        "difficulty": 3
+      },
+      {
+        "category": "RUSSE_",
+        "items": ["BUSS", "KORT", "DRESS", "FEST"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
     "puzzle_name": "Oppgave 12.september 2025",
     "puzzle_difficulty": 5,
     "groups": [
