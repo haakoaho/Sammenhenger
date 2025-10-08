@@ -1,5 +1,32 @@
 [
   {
+    "puzzle_name": "Oppgave 9.oktober 2025",
+    "puzzle_difficulty": 3,
+    "groups": [
+      {
+        "category": "KLIMA- OG MILJØDEPARTEMENTET",
+        "items": ["KLIMA", "NATUR", "MANGFOLD", "AVFALL"],
+        "difficulty": 1
+      },
+      {
+        "category": "FINANSDEPARTEMENTET",
+        "items": ["SKATT", "OLJEFOND", "STATISTIKK", "TOLL"],
+        "difficulty": 2
+      },
+      {
+        "category": "KULTUR- OG LIKESTILLINGSDEPARTEMENTET",
+        "items": ["PENGESPILL", "LIKESTILLING", "IDRETT", "MEDIA"],
+        "difficulty": 3
+      },
+
+      {
+        "category": "BARNE- OG FAMILEDEPARTEMENTET",
+        "items": ["BARN", "LIVSSYN", "FORBRUKER", "FAMILIE"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
     "puzzle_name": "Oppgave 25.september 2025",
     "puzzle_difficulty": 4,
     "groups": [
