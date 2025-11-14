@@ -1,4 +1,31 @@
 [
+    {
+    "puzzle_name": "Oppgave 14. november 2025",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "FRA GRESK",
+        "items": ["ALFA", "EUREKA", "ATHENA", "ATLAS"],
+        "difficulty": 1
+      },
+      {
+        "category": "IKKE TILLATT PÅ EKSAMEN",
+        "items": ["SAMARBEID", "SMS/MMS", "FUSK", "PLAGIAT"],
+        "difficulty": 2
+      },
+      {
+        "category": "_DAL",
+        "items": ["IMS", "NAM", "TY", "HEMSE"],
+        "difficulty": 3
+      },
+
+      {
+        "category": "RAMP_",
+        "items": ["ESTREK", "UNGE", "ELYS", "ONERING"],
+        "difficulty": 4
+      }
+    ]
+  }
   {
     "puzzle_name": "Oppgave 9.oktober 2025",
     "puzzle_difficulty": 3,
@@ -159,4 +186,5 @@
     ]
   }
 ]
+
 
