@@ -1,4 +1,31 @@
 [
+  {
+    "puzzle_name": "Oppgave 29. januar 2026",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "UTYDELIG",
+        "items": ["TÅKE", "VAG", "DIFFUS", "ULLEN"],
+        "difficulty": 1
+      },
+      {
+        "category": "GRUNN TIL Å BRUKE BRILLER",
+        "items": ["SOL", "3D", "VERN", "SVAKSYNT"],
+        "difficulty": 2
+      },
+      {
+        "category": "BERGENSK",
+        "items": ["BRANN", "BRYGGEN", "REGN", "SKARRING"],
+        "difficulty": 3
+      },
+
+      {
+        "category": "TREKANT I FIRE RETTNINGER",
+        "items": ["VIKEPLIKT", "DELTA", "TILBAKE", "SPILL AV"],
+        "difficulty": 4
+      }
+    ]
+  },
     {
     "puzzle_name": "Oppgave 14. november 2025",
     "puzzle_difficulty": 4,
@@ -47,7 +74,7 @@
       },
 
       {
-        "category": "BARNE- OG FAMILEDEPARTEMENTET",
+        "category": "BARNE- OG FAMILIEDEPARTEMENTET",
         "items": ["BARN", "LIVSSYN", "FORBRUKER", "FAMILIE"],
         "difficulty": 4
       }
