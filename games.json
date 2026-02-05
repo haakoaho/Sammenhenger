@@ -1,5 +1,31 @@
 [
   {
+    "puzzle_name": "Oppgave 5. februar 2026",
+    "puzzle_difficulty": 4,
+    "groups": [
+      {
+        "category": "PAUSE I SKITUREN",
+        "items": ["SJOKOLADE", "APPELSIN", "BÅL", "PØLSER"],
+        "difficulty": 1
+      },
+      {
+        "category": "RIK PÅ D-VITAMIN",
+        "items": ["SOL", "TRAN", "KAPSLER", "EGG"],
+        "difficulty": 2
+      },
+      {
+        "category": "PLANTEFORMERING",
+        "items": ["FRØ", "POLLEN", "STIKLING", "BEFRUKTNING"],
+        "difficulty": 3
+      },
+      {
+        "category": "_KAKE",
+        "items": ["KJØTT", "FISKE", "PANNE", "FOSTER"],
+        "difficulty": 4
+      }
+    ]
+  },
+  {
     "puzzle_name": "Oppgave 29. januar 2026",
     "puzzle_difficulty": 4,
     "groups": [
@@ -26,7 +52,7 @@
       }
     ]
   },
-    {
+  {
     "puzzle_name": "Oppgave 14. november 2025",
     "puzzle_difficulty": 4,
     "groups": [
@@ -213,5 +239,3 @@
     ]
   }
 ]
-
-
